@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-sm-4 col-xs-12">
+      <div class="card bg-light border-primary">
+        <div class="card-header text-primary">NOUVEAU PRODUIT</div>
+        <div class="card-body" *ngIf="currentProduct">
+          <form #refNewP="ngForm" (ngSubmit)="onUpdateProduct(refNewP.value)">
+            <div class="form-group mx-sm-3 mb-2">
+              <label for="inputDesignation">Désignation :</label>
+              <input class="form-control" type="text" id="inputDesignation" name="designation" ngModel [(ngModel)]="currentProduct.designation">
+            </div>
+            <div class="form-group mx-sm-3 mb-2">
+              <label for="inputPrix">Prix :</label>
+              <input class="form-control" type="number" id="inputPrix" name="prix" ngModel [(ngModel)]="currentProduct.prix">
+            </div>
+            <div class="form-group mx-sm-3 mb-2">
+              <label for="inputQuantite">Quantité :</label>
+              <input class="form-control" type="number" id="inputQuantite" name="quantite" ngModel [(ngModel)]="currentProduct.quantite">
+            </div>
+            <div class="form-group mx-sm-3 mb-2">
+              <button class="btn btn-success" type="submit">Enregistrer</button>
+              <button class="btn btn-warning" [routerLink]="['/produits']">Annuler</button>
+            </div>
+          </form>
+        </div>
+        <!-- <div class="card-body" *ngIf="mode==2" >
+          <div class="form-group">
+            <br>
+            <p>Mise à jour effectué avec succes.</p>
+            <br>
+            <button class="btn btn-success" (click)="onRetourNewProduct()" >OK</button>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <div class="container" id="input">
+  <div class="row">
+    <div class="col-md-6 col-sm-4 col-xs-12">
+      <div class="card bg-light border-primary">
+        <div class="card-header text-primary">EDITION DU PRODUIT</div>
+        <div class="card-body">
+          <div class="form-group mx-sm-3 mb-2">
+            <label for="inputDesignation">Désignation :</label>
+            <input class="form-control" type="text" id="inputDesignation" placeholder="Désignation" name="designation" ngModel>
+          </div>
+          <div class="form-group mx-sm-3 mb-2">
+            <label for="inputPrix">Prix :</label>
+            <input class="form-control" type="number" id="inputPrix" name="prix" ngModel>
+          </div>
+          <div class="form-group mx-sm-3 mb-2">
+            <label for="inputQuantite">Quantité :</label>
+            <input class="form-control" type="number" id="inputQuantite" name="quantite" ngModel>
+          </div>
+          <div class="form-group mx-sm-3 mb-2">
+            <button class="btn btn-success" (click)="saveProductEdit()" >Modifier</button>
+            <button class="btn btn-warning" [routerLink]="['/produits']">Annuler</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
